@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button bmi;
+    Button bmi,danwei,jinzhi;
     EditText result_main;
     public String equation = "";
     private Button one, two, three, four, five, six, seven, eight, nine, zero;
@@ -22,6 +22,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 Intent bmiIntent = new Intent(MainActivity.this, BMIActivity.class);
                 startActivity(bmiIntent);
+            }
+        });
+        danwei = (Button)findViewById(R.id.danwei);
+        danwei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent danweiIntent = new Intent(MainActivity.this,DanweiActivity.class);
+                startActivity(danweiIntent);
+            }
+        });
+        jinzhi = (Button)findViewById(R.id.jinzhi);
+        jinzhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent jinzhiIntent = new Intent(MainActivity.this,jinzhiActivity.class);
+                startActivity(jinzhiIntent);
             }
         });
     }

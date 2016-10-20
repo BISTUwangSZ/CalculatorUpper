@@ -11,165 +11,18 @@
     tools:context="com.example.yoyo.calculatorupper.jinzhiActivity">
 
     <EditText
+        android:inputType="text"
         android:paddingTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="这里将显示算式和结果"
-        android:id="@+id/result_main"
+        android:text="0"
+        android:id="@+id/result_jinzhi"
         android:gravity="right"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:rowCount="5"
-        android:layout_marginTop="42dp"
-        android:layout_below="@+id/result_main"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:text="1"
-            android:id="@+id/one"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_width="60dp"
-            android:layout_height="60dp"/>
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="2"
-            android:id="@+id/two"
-            android:layout_row="0"
-            android:layout_column="1" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="3"
-            android:id="@+id/three"
-            android:layout_row="0"
-            android:layout_column="2" />
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="4"
-            android:id="@+id/four"
-            android:layout_row="0"
-            android:layout_column="3" />
-
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="5"
-            android:id="@+id/five"
-            android:layout_row="1"
-            android:layout_column="0" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="6"
-            android:id="@+id/six"
-            android:layout_row="1"
-            android:layout_column="1" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="7"
-            android:id="@+id/seven"
-            android:layout_row="1"
-            android:layout_column="2" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="8"
-            android:id="@+id/eight"
-            android:layout_row="1"
-            android:layout_column="3" />
-
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="9"
-            android:id="@+id/nine"
-            android:layout_row="2"
-            android:layout_column="0" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="A"
-            android:id="@+id/a"
-            android:layout_row="2"
-            android:layout_column="1" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="B"
-            android:id="@+id/b"
-            android:layout_row="2"
-            android:layout_column="2" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="C"
-            android:id="@+id/c"
-            android:layout_row="2"
-            android:layout_column="3" />
-
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="D"
-            android:id="@+id/d"
-            android:layout_row="3"
-            android:layout_column="0" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="E"
-            android:id="@+id/e"
-            android:layout_row="3"
-            android:layout_column="1" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="F"
-            android:id="@+id/f"
-            android:layout_row="3"
-            android:layout_column="2" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="0"
-            android:id="@+id/zero"
-            android:layout_row="3"
-            android:layout_column="3" />
-
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:text="计算"
-            android:id="@+id/jinzhi_calculate"
-            android:layout_row="4"
-            android:layout_column="0"
-            android:layout_columnSpan="2"/>
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:text="清空"
-            android:id="@+id/ce"
-            android:layout_row="4"
-            android:layout_column="2"
-            android:layout_columnSpan="2"/>
-    </GridLayout>
-
     <RadioGroup
+        android:id="@+id/radix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
@@ -182,26 +35,177 @@
             android:text="二进制"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/binary" />
+            android:id="@+id/binaryradix"
+            android:onClick="checkRadix"/>
         <RadioButton
             android:text="八进制"
             android:layout_marginTop="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/octonary" />
+            android:id="@+id/octonary"
+            android:onClick="checkRadix"/>
         <RadioButton
             android:text="十进制"
             android:layout_marginTop="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/decimal" />
+            android:id="@+id/decimal"
+            android:onClick="checkRadix"
+            android:checked="true"/>
         <RadioButton
             android:text="十六进制"
             android:layout_marginTop="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/hex" />
+            android:id="@+id/hex"
+            android:onClick="checkRadix"/>
 
     </RadioGroup>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="1"
+            android:id="@+id/one"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="2"
+            android:id="@+id/two"
+            android:layout_row="3"
+            android:layout_column="2"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="3"
+            android:id="@+id/three"
+            android:layout_row="3"
+            android:layout_column="3"/>
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="4"
+            android:id="@+id/four"
+            android:layout_row="2"
+            android:layout_column="0"/>
+
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="5"
+            android:id="@+id/five"
+            android:layout_row="2"
+            android:layout_column="1"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="6"
+            android:id="@+id/six"
+            android:layout_row="2"
+            android:layout_column="2"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="7"
+            android:id="@+id/seven"
+            android:layout_row="2"
+            android:layout_column="3"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="8"
+            android:id="@+id/eight"
+            android:layout_row="1"
+            android:layout_column="0"/>
+
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="9"
+            android:id="@+id/nine"
+            android:layout_row="1"
+            android:layout_column="1"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="A"
+            android:id="@+id/a"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:enabled="false"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="B"
+            android:id="@+id/b"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:enabled="false"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="C"
+            android:id="@+id/c"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:enabled="false"/>
+
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="D"
+            android:id="@+id/d"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:enabled="false"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="E"
+            android:id="@+id/e"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:enabled="false"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="F"
+            android:id="@+id/f"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:enabled="false"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="0"
+            android:id="@+id/zero"
+            android:layout_row="3"
+            android:layout_column="0"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="清空"
+            android:id="@+id/ce_jinzhi"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_columnSpan="4"/>
+    </GridLayout>
 
 </RelativeLayout>

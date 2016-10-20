@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:columnCount="7"
         android:rowCount="5"
-        android:paddingLeft="15dp">
+        android:paddingLeft="40dp">
 
         <Button
             android:text="1"
